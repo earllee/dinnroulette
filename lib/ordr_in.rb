@@ -19,4 +19,18 @@ class OrdrIn
     options["delivery_date"] = "ASAP"
     post("/o/#{options['rid']}", options).parsed_response
   end
+
+  def self.findItems(section)
+    items = []
+    section.each do |item|
+      if item["is_orderable"] == "1"
+        if item["price"] != "0.00"
+          items << item
+        end
+      elsif item["children"]
+        items + findItems(item["children"])
+      end
+    end
+    items
+  end
 end
