@@ -28,7 +28,7 @@ class OrdrIn
           items << item
         end
       elsif item["children"]
-        items + findItems(item["children"])
+        items = items + findItems(item["children"])
       end
     end
     items
