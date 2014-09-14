@@ -1,0 +1,107 @@
+<p>Hello world. You get to order food now.</p>
+
+<div class="content-wrapper">
+  <form id="new-customer" class="form-horizontal" method="get" action="#" role="form" novalidate="novalidate">
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">First name</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cFirstName class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Last name</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cLastName class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Address</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cAddress class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">City</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cCity class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">State</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cState class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">ZIP</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cZip class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Phone</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cPhone class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Email (Em)</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cEmail class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Card Name</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cCardName class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Card Number</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cCardNumber class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">CVC</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cCode class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Expires</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cExpires class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Billing Address</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cBillingAddress class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Billing City</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cBillingCity class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Billing State</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cBillingState class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 col-md-2 control-label">Billing ZIP</label>
+        <div class="col-sm-10 col-md-8">
+          {{input value=cBillingZip class="form-control"}}
+        </div>
+      </div>
+      <div class="form-group form-actions">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button {{action 'orderFood'}} type="submit" class="btn btn-success">Order Food</button>
+        </div>
+      </div>
+  </form>
+</div>
