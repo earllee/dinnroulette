@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def create
     errors = check_params
-    if errors.length
+    if errors.length != 0
       render json: {danger: errors}
     else
       dl = OrdrIn.delivery_list(order_params)
@@ -26,7 +26,19 @@ class OrdersController < ApplicationController
           if order["_err"] == "1"
             render json: {danger: "Order failed."}
           else
-            render json: {name: item["name"], price: item["price"]}
+            purchased_hash = {}
+            tray.each do |item|
+              if purchased_hash[item["name"]]
+                purchased_hash[item["name"]]["quantity"] += 1
+              else
+                purchased_hash[item["name"]] = {"name" => item["name"], "price" => item["price"], "quantity" => 1}
+              end
+            end
+            purchased = []
+            purchased_hash.each do |k, v|
+              purchased << v
+            end
+            render json: purchased
           end
         end
       end
