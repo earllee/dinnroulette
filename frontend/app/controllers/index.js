@@ -10,13 +10,15 @@ export default Ember.ObjectController.extend({
   cPhone: '2403617479',
   cEmail: 'earl.lee@yale.edu',
   cCardName: 'Earl\'s Black Card',
-  cCardNumber: '4242 5555 4242 5555',
+  cCardNumber: '4242555542425555',
   cCode: '555',
   cExpires: '01/18',
   cBillingAddress: '109 Grove Street',
   cBillingCity: 'New Haven',
   cBillingState: 'CT',
   cBillingZip: '06520',
+  cMinPrice: 0,
+  cMaxPrice: 100,
 
   actions: {
     orderFood: function() {
@@ -24,9 +26,6 @@ export default Ember.ObjectController.extend({
         url: 'http://localhost:7000/orders',
         type: 'POST',
         crossDomain: true,
-        xhrFields: {
-          withCredentials: true
-        },
         data: {
           first_name: this.get('cFirstName'),
           last_name: this.get('cLastName'),
@@ -45,8 +44,11 @@ export default Ember.ObjectController.extend({
           card_bill_state: this.get('cBillingState'),
           card_bill_zip: this.get('cBillingZip'),
         },
-        complete: function(payload) {
-          console.log(payload);
+        success: function(payload) {
+          console.log('Successfully ordered:');
+          payload.forEach(function(food) {
+            console.log('\t->' + food.name);
+          });
         },
       });
     },
