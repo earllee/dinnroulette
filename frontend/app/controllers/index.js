@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend({
   actions: {
     orderFood: function() {
       $.ajax({
-        url: 'http://localhost:7000',
+        url: 'http://localhost:7000/orders',
         type: 'POST',
         crossDomain: true,
         xhrFields: {
