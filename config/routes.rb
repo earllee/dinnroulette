@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   post '/orders' => 'orders#create'
+  post '/auth' => 'orders#auth'
+  post '/verify' => 'orders#verify'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

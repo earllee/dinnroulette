@@ -120,4 +120,11 @@ class OrdrIn
       possible[Random.rand(possible.length)]
     end
   end
+
+  def self.parse_order(tray)
+    names = tray.map { |item| item["name"] }
+    order = names.join(",")
+    p order
+    order
+  end
 end
