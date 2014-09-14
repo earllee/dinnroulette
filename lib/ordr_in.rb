@@ -4,12 +4,12 @@ class OrdrIn
   include HTTParty
   headers 'X-NAAMA-CLIENT-AUTHENTICATION' => "id=\"#{ENV['ORDRIN_KEY']}\", version=\"1\""
   format :json
-  
+
   def self.delivery_list(options)
     self.base_uri 'https://r-test.ordr.in'
-    get("/dl/ASAP/#{options['zip']}/#{options['city']}/#{URI::escape(options['addr'])}").parsed_response
+    get("/dl/ASAP/#{options['zip']}/#{URI::escape(options['city'])}/#{URI::escape(options['addr'])}").parsed_response
   end
-  
+
   def self.restaurant(id)
     self.base_uri 'https://r-test.ordr.in'
     get("/rd/#{id}").parsed_response
